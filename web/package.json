@@ -1,0 +1,17 @@
+{
+  "name": "opencv-viewer",
+  "version": "1.0.0",
+  "description": "TypeScript web viewer for OpenCV processed frames",
+  "main": "dist/app.js",
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc --watch"
+  },
+  "keywords": ["opencv", "viewer", "typescript"],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^5.0.0"
+  }
+}
+
