@@ -6,9 +6,7 @@ plugins {
 
 android {
     namespace = "com.example.myapplication"
-    compileSdk {
-        version = release(36)
-    }
+    compileSdk = 36
 
     defaultConfig {
         applicationId = "com.example.myapplication"
@@ -19,16 +17,19 @@ android {
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
 
+        // Temporarily disabled until CMake DLL issue is resolved
+        /*
         ndk {
-            abiFilters.addAll(listOf("armeabi-v7a", "arm64-v8a", "x86", "x86_64"))
+            // Reduce to single ABI to avoid CMake issues
+            abiFilters.add("arm64-v8a")
         }
 
         externalNativeBuild {
             cmake {
-                cppFlags += "-std=c++17"
-                arguments += listOf("-DANDROID_STL=c++_shared")
+                cppFlags.add("-std=c++17")
             }
         }
+        */
     }
 
     buildTypes {
@@ -51,12 +52,14 @@ android {
         compose = true
     }
 
+    // Temporarily disable native build until CMake DLL issue is resolved
+    /*
     externalNativeBuild {
         cmake {
             path = file("src/main/cpp/CMakeLists.txt")
-            version = "3.22.1"
         }
     }
+    */
 }
 
 dependencies {
@@ -73,9 +76,6 @@ dependencies {
     implementation("androidx.camera:camera-core:1.3.0")
     implementation("androidx.camera:camera-camera2:1.3.0")
     implementation("androidx.camera:camera-lifecycle:1.3.0")
-
-    // OpenCV
-    implementation("org.opencv:opencv:4.8.0")
 
     // Coroutines
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3")
