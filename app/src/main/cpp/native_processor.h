@@ -2,7 +2,6 @@
 #define NATIVE_PROCESSOR_H
 
 #include <jni.h>
-#include <opencv2/opencv.hpp>
 #include <android/log.h>
 
 #define LOG_TAG "NativeProcessor"
@@ -38,10 +37,6 @@ extern "C" {
             jint textureId);
 }
 
-// Helper functions
-cv::Mat convertYUVtoMat(const unsigned char* yuv, int width, int height);
-cv::Mat processGrayscale(const cv::Mat& input);
-cv::Mat processCanny(const cv::Mat& input);
 
 #endif // NATIVE_PROCESSOR_H
 
