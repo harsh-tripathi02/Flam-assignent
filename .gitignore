@@ -1,0 +1,33 @@
+*.iml
+.gradle
+/local.properties
+/.idea/caches
+/.idea/libraries
+/.idea/modules.xml
+/.idea/workspace.xml
+/.idea/navEditor.xml
+/.idea/assetWizardSettings.xml
+.DS_Store
+/build
+/app/build
+/captures
+.externalNativeBuild
+.cxx
+local.properties
+
+# NDK
+*.so
+*.a
+obj/
+libs/armeabi*/
+libs/arm64*/
+libs/x86*/
+
+# OpenCV
+app/libs/opencv/
+
+# Web build
+web/node_modules/
+web/dist/
+web/package-lock.json
+
